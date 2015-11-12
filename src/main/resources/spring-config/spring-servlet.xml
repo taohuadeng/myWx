@@ -64,4 +64,5 @@
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/images/**" location="/images/"/>-->
     <mvc:resources mapping="/pages/**" location="/pages/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
 </beans>

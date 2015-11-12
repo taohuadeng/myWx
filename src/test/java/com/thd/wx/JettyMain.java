@@ -14,7 +14,7 @@ public class JettyMain {
         jettyServer.setConnectors(new Connector[]{conn});
 
         WebAppContext webAppContext = new WebAppContext();
-        webAppContext.setContextPath("/wx");
+        webAppContext.setContextPath("/myWx");
         webAppContext.setWar("web");
         jettyServer.setHandler(webAppContext);
         jettyServer.start();
