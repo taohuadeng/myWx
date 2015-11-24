@@ -61,4 +61,14 @@ public class TestController {
 
         return "picture";
     }
+
+    @RequestMapping("/study")
+    public String study() {
+        return "study/study";
+    }
+
+    @RequestMapping("/angular")
+    public String angular() {
+        return "study/angular";
+    }
 }

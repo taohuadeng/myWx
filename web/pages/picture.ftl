@@ -53,6 +53,28 @@
     <input type="file" capture="camera" name="file" value="拍照"><br/>
     <hr/>
     <input type="button" onclick="upload.fileuploadLoad();" value="上传照片">
+    <hr/>
+    <div style="float:left">div1</div>
+    <div style="float:left">div2</div>
+
+    <input type="text" id="myText" value="input text">
+    <script>
+        function Obj() {
+            this.value = "对象！";
+        }
+
+        var value = "global 变量";
+
+        function Fun1() {
+            alert(this.value);
+        }
+
+//        window.Fun1();   //global 变量
+//        Fun1.call(window);  //global 变量
+//        Fun1.call(document.getElementById('myText'));  //input text
+        Fun1.call(new Obj());   //对象！
+//        window.Fun1(); //global 变量
+    </script>
 </form>
 </body>
 </html>
