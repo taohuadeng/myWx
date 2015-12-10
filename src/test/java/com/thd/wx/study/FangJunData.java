@@ -1,9 +1,9 @@
 package com.thd.wx.study;
 
-import jxl.Workbook;
-import org.apache.commons.io.IOUtils;
 import jxl.Cell;
 import jxl.Sheet;
+import jxl.Workbook;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.*;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Excel生成需要的文件
  */
-public class WorkbookTest {
+public class FangJunData {
     public static void main(String[] args) throws Exception {
         Workbook workbook = null;
         InputStream inputStream = new FileInputStream("F:/456.xls");
