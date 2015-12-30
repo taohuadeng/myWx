@@ -1,13 +1,7 @@
 package com.thd.wx.util;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Random;
+import java.text.*;
+import java.util.*;
 
 /**
  * @Author:taofadeng
@@ -793,7 +787,27 @@ public class DateUtil {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println(getNewDateByDate(new Date(),-1));
+        /*Calendar c_begin = new GregorianCalendar();
+        Calendar c_end = new GregorianCalendar();
+        DateFormatSymbols dfs = new DateFormatSymbols();
+        String[] weeks = dfs.getWeekdays();
+
+        c_begin.set(2002, 1, 1); //Calendar的月从0-11，所以4月是3.
+        c_end.set(2050, 12, 31); //Calendar的月从0-11，所以5月是4.
+
+        int count = 1;
+        c_end.add(Calendar.DAY_OF_YEAR, 1);  //结束日期下滚一天是为了包含最后一天
+
+        while(c_begin.before(c_end)){
+            System.out.println("第"+count+"周  日期："+new java.sql.Date(c_begin.getTime().getTime())+", "+weeks[c_begin.get(Calendar.DAY_OF_WEEK)]);
+
+            if(c_begin.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
+                count++;
+            }
+            c_begin.add(Calendar.DAY_OF_YEAR, 1);
+        }*/
+
+        List<String> list = new ArrayList<String>();
     }
 
     /**
