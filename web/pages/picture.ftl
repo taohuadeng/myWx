@@ -16,6 +16,11 @@
                 $('#video').removeAttr("controls");
                 alert('已经暂停！');
             });
+
+            $("#validateCodeImg").click(function () {
+                var url = '${rc.contextPath!}/test/getSecCode?date=' + new Date();
+                $("#validateCodeImg").attr("src", url);
+            });
         });
 
         //        $(document).ready(function () {
@@ -50,6 +55,8 @@
 </div>
 <hr/>
 <form id="uploadForm" action="${rc.contextPath}/test/uploadFile" method="post" enctype="multipart/form-data">
+    <img src="${rc.contextPath!}/test/getSecCode" id="validateCodeImg"/>
+    <hr/>
     <input type="file" capture="camera" name="file" value="拍照"><br/>
     <hr/>
     <input type="button" onclick="upload.fileuploadLoad();" value="上传照片">
@@ -69,11 +76,11 @@
             alert(this.value);
         }
 
-//        window.Fun1();   //global 变量
-//        Fun1.call(window);  //global 变量
-//        Fun1.call(document.getElementById('myText'));  //input text
+        //        window.Fun1();   //global 变量
+        //        Fun1.call(window);  //global 变量
+        //        Fun1.call(document.getElementById('myText'));  //input text
         Fun1.call(new Obj());   //对象！
-//        window.Fun1(); //global 变量
+        //        window.Fun1(); //global 变量
     </script>
 </form>
 </body>

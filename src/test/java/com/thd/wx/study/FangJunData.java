@@ -17,7 +17,7 @@ import java.util.List;
 public class FangJunData {
     public static void main(String[] args) throws Exception {
         Workbook workbook = null;
-        InputStream inputStream = new FileInputStream("F:/456.xls");
+        InputStream inputStream = new FileInputStream("F:/aaaaa.xls");
         workbook = Workbook.getWorkbook(inputStream);
         Sheet sheet = workbook.getSheet(0);
         int rsRows = sheet.getRows();
@@ -26,15 +26,17 @@ public class FangJunData {
         String id = "";
         for (int i = 0; i < rsRows; i++) {
             Cell cell0 = sheet.getCell(0, i);
-            String itemId = cell0.getContents();
-            if (StringUtils.isEmpty(id)) {
-                id = "'" + itemId + "'";
-            } else {
-                id = id + ",'" + itemId + "'";
-            }
+            Cell cell1 = sheet.getCell(1, i);
+            String itemId0 = cell0.getContents();
+            String itemId1 = cell1.getContents();
+//            if (StringUtils.isEmpty(id)) {
+//                id = "'" + itemId + "'";
+//            } else {
+//                id = id + ",'" + itemId + "'";
+//            }
 
-//            String sql = "SELECT \"count\"(*) FROM t_els_study_plan WHERE corp_code='ladeng.com' AND plan_status='LANCH';\n";
-//            list.add(sql);
+            String sql = "tempIdMap.put(\"" + itemId0 + "\",\"" + itemId1 + "\");";
+            list.add(sql);
         }
 
         //安排课程数
@@ -58,8 +60,8 @@ public class FangJunData {
         //是否添加培训管理员
         //String sql = "SELECT corp_code FROM t_uc_user_role_rel WHERE corp_code IN (" + id + ") AND role_id = '402880593604ea49013605e3208602f2' GROUP BY corp_code HAVING COUNT(user_id)>0 ;";
         //是否添过角色
-        String sql = "SELECT corp_code,\"count\"(*) from t_oms_role where corp_code IN (" + id + ") AND  override_id is null and override_type is null GROUP BY corp_code ;";
-        list.add(sql);
+//        String sql = "SELECT corp_code,\"count\"(*) from t_oms_role where corp_code IN (" + id + ") AND  override_id is null and override_type is null GROUP BY corp_code ;";
+//        list.add(sql);
 
         File file = new File("F:/select.sql");
         FileWriter fw = null;

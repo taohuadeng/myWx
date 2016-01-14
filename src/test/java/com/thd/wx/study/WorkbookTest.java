@@ -15,6 +15,10 @@ import java.util.*;
  */
 public class WorkbookTest {
     public static void main(String[] args) throws Exception {
+        dealDate();
+    }
+
+    private static void dealDate() {
         List<String> list = new ArrayList<String>();
         String id = "";
 

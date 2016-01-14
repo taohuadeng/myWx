@@ -1,25 +1,17 @@
 package com.thd.wx.index.controller;
 
-import com.thd.wx.util.CoreService;
 import com.thd.wx.util.FileUtil;
-import com.thd.wx.util.SignUtil;
-import org.apache.commons.lang.StringUtils;
+import com.thd.wx.util.FishUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,6 +29,11 @@ public class TestController {
     @RequestMapping("/picture")
     public String picture() {
         return "picture";
+    }
+
+    @RequestMapping("/getSecCode")
+    public void getSecCode(HttpServletResponse response) {
+        FishUtil.generateSecCode(FishUtil.getConfirmCode(4), 100, 40, response);
     }
 
     /**
