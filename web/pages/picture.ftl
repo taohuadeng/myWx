@@ -46,15 +46,16 @@
     </script>
 </head>
 <body style="text-align: center">
-<div id="videoDiv">
+<#--<div id="videoDiv">
     <video id="video" width="320" height="240">
         <source src="${rc.contextPath}/pages/vedio_1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <input id="buttonId" type="button" value="播放"/>
-</div>
+</div>-->
 <hr/>
-<form id="uploadForm" action="${rc.contextPath}/test/uploadFile" method="post" enctype="multipart/form-data">
+<#--<form id="uploadForm" action="${rc.contextPath}/test/uploadFile" method="post" enctype="multipart/form-data">-->
+<form id="uploadForm" action="http://hf.21tb.com/sf-server/file/uploadFile?responseFormat=text/plain" method="post" enctype="multipart/form-data">
     <img src="${rc.contextPath!}/test/getSecCode" id="validateCodeImg"/>
     <hr/>
     <input type="file" capture="camera" name="file" value="拍照"><br/>
@@ -65,7 +66,7 @@
     <div style="float:left">div2</div>
 
     <input type="text" id="myText" value="input text">
-    <script>
+    <#--<script>
         function Obj() {
             this.value = "对象！";
         }
@@ -81,7 +82,7 @@
         //        Fun1.call(document.getElementById('myText'));  //input text
         Fun1.call(new Obj());   //对象！
         //        window.Fun1(); //global 变量
-    </script>
+    </script>-->
 </form>
 </body>
 </html>

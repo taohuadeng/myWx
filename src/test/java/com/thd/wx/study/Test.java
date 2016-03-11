@@ -7,13 +7,10 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-//        char a = '我';
-//        System.out.println(a);
-        System.out.println(Float.MAX_VALUE > Long.MAX_VALUE);
-        System.out.println(Long.MAX_VALUE);
-        System.out.println(Float.MAX_VALUE);
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Double.MAX_VALUE);
+        String url = "html/test.do?id=003";
+        int indexOf = url.indexOf("?");
+        String substring = url.substring(indexOf + 1);
+        System.out.println(substring);
     }
 
     // 4.请写出下列代码运行的结果。
