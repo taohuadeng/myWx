@@ -43,7 +43,7 @@ public class PPT {
                     childRecord.getRecordType();
                 }
             }
-            RichTextRun
+
             ColorSchemeAtom colorScheme = slide.getColorScheme();
             int fillsColourRGB = colorScheme.getFillsColourRGB();
             //读取一张幻灯片的内容(包括标题)
