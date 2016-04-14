@@ -30,32 +30,32 @@ public class Attendance {
 
     private static void dealDate() throws IOException, BiffException {
         Workbook workbook = null;
-        InputStream inputStream = new FileInputStream("E:/1602.xls");
+        InputStream inputStream = new FileInputStream("E:/1603.xls");
         workbook = Workbook.getWorkbook(inputStream);
         Sheet sheet = workbook.getSheet(0);
         int rsRows = sheet.getRows();
         Map<String, Map<String, Object>> mapMap = new HashMap<String, Map<String, Object>>();
         appendData(sheet, rsRows, mapMap);
 
-        inputStream = new FileInputStream("E:/1602-B2B.xls");
+        inputStream = new FileInputStream("E:/1603-B2B.xls");
         workbook = Workbook.getWorkbook(inputStream);
         sheet = workbook.getSheet(0);
         rsRows = sheet.getRows();
         appendData(sheet, rsRows, mapMap);
 
-        inputStream = new FileInputStream("E:/1602-SA.xls");
+        inputStream = new FileInputStream("E:/1603-SA.xls");
         workbook = Workbook.getWorkbook(inputStream);
         sheet = workbook.getSheet(0);
         rsRows = sheet.getRows();
         appendData(sheet, rsRows, mapMap);
 
-        inputStream = new FileInputStream("E:/1602-PRO.xls");
+        inputStream = new FileInputStream("E:/1603-PRO.xls");
         workbook = Workbook.getWorkbook(inputStream);
         sheet = workbook.getSheet(0);
         rsRows = sheet.getRows();
         appendData(sheet, rsRows, mapMap);
 
-        inputStream = new FileInputStream("E:/1602-CESHI.xls");
+        inputStream = new FileInputStream("E:/1603-CESHI.xls");
         workbook = Workbook.getWorkbook(inputStream);
         sheet = workbook.getSheet(0);
         rsRows = sheet.getRows();

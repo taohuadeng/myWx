@@ -1,6 +1,6 @@
 package com.thd.wx.study;
 
-import org.apache.poi.hslf.usermodel.*;
+//import org.apache.poi.hslf.usermodel.*;
 import org.apache.poi.sl.usermodel.Line;
 import org.apache.poi.sl.usermodel.StrokeStyle;
 import org.apache.poi.sl.usermodel.TextParagraph;
@@ -24,7 +24,7 @@ public class PPTX {
             //getShapes();
 
 
-            XMLSlideShow xmlSlideShow = new XMLSlideShow(new FileInputStream("test01.pptx"));
+            XMLSlideShow xmlSlideShow = new XMLSlideShow(new FileInputStream("D:/test01.pptx"));
             xmlSlideShow.getSlides().get(0).getXmlObject().getTransition().isSetAdvClick();
 
 
@@ -36,7 +36,7 @@ public class PPTX {
     }
 
     //如何获得形状包含在一个特定的幻灯片
-    private static void getShapes() throws IOException {
+   /* private static void getShapes() throws IOException {
         HSLFSlideShow ppt = new HSLFSlideShow(new HSLFSlideShowImpl("slideshow.ppt"));
         // get slides
         for (HSLFSlide slide : ppt.getSlides()) {
@@ -64,10 +64,10 @@ public class PPTX {
                 }
             }
         }
-    }
+    }*/
 
     //如何检索或更改幻灯片大小
-    private static void changePageSize() throws IOException {
+    /*private static void changePageSize() throws IOException {
         HSLFSlideShow ppt = new HSLFSlideShow(new HSLFSlideShowImpl("slideshow.ppt"));
         //retrieve page size. Coordinates are expressed in points (72 dpi)
         java.awt.Dimension pgsize = ppt.getPageSize();
@@ -80,10 +80,10 @@ public class PPTX {
         FileOutputStream out = new FileOutputStream("slideshow2.ppt");
         ppt.write(out);
         out.close();
-    }
+    }*/
 
     //新演示文稿
-    private static void newPresentation() throws IOException {
+    /*private static void newPresentation() throws IOException {
         //create a new empty slide show
         HSLFSlideShow ppt = new HSLFSlideShow();
 
@@ -98,5 +98,5 @@ public class PPTX {
         out = new FileOutputStream("slideshow.ppt");
         ppt.write(out);
         out.close();
-    }
+    }*/
 }
