@@ -1,16 +1,14 @@
 package com.thd.wx.study;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.thd.wx.util.DateUtil;
+
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        String url = "html/test.do?id=003";
-        int indexOf = url.indexOf("?");
-        String substring = url.substring(indexOf + 1);
-        System.out.println(substring);
+        Date toDate = DateUtil.getStringToDate("2016-07-25 12:30:00");
+        long laterMinutes = ((toDate.getTime() - new Date().getTime()));
+        System.out.println(laterMinutes / (1000 * 60 * 1.0));
     }
 
     // 4.请写出下列代码运行的结果。
