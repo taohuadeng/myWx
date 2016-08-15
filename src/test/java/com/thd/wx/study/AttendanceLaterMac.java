@@ -29,7 +29,7 @@ public class AttendanceLaterMac {
 
     private static void dealDate() throws IOException, BiffException {
         Workbook workbook = null;
-        InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201605.xls");
+        InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201607.xls");
         workbook = Workbook.getWorkbook(inputStream);
         Sheet sheet = workbook.getSheet(0);
         int rsRows = sheet.getRows();
