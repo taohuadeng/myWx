@@ -29,36 +29,36 @@ public class AttendanceMacDetail {
 
     private static void dealDate() throws IOException, BiffException {
         Workbook workbook = null;
-        //InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/8.8周/青谷考勤.xls");
-        InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201605.xls");
+        InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201608.xls");
+        //InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/含周末/青谷考勤-201605.xls");
         workbook = Workbook.getWorkbook(inputStream);
         Sheet sheet = workbook.getSheet(0);
         int rsRows = sheet.getRows();
         Map<String, Map<String, Object>> mapMap = new HashMap<String, Map<String, Object>>();
         appendData(sheet, rsRows, mapMap);
 
-        //*******
-        inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201606.xls");
-        workbook = Workbook.getWorkbook(inputStream);
-        sheet = workbook.getSheet(0);
-        rsRows = sheet.getRows();
-        appendData(sheet, rsRows, mapMap);
-
-        inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201607.xls");
-        workbook = Workbook.getWorkbook(inputStream);
-        sheet = workbook.getSheet(0);
-        rsRows = sheet.getRows();
-        appendData(sheet, rsRows, mapMap);
+//        //*******
+//        inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/含周末/青谷考勤-201606.xls");
+//        workbook = Workbook.getWorkbook(inputStream);
+//        sheet = workbook.getSheet(0);
+//        rsRows = sheet.getRows();
+//        appendData(sheet, rsRows, mapMap);
+//
+//        inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/含周末/青谷考勤-201607.xls");
+//        workbook = Workbook.getWorkbook(inputStream);
+//        sheet = workbook.getSheet(0);
+//        rsRows = sheet.getRows();
+//        appendData(sheet, rsRows, mapMap);
         //*******
 
         List<String> list = new ArrayList<String>();
-        String v1 = "姓名" + "\t" + "加班次数8:30后" + "\t" + "8:30后总时长" + "\t" +
+        String v1 = "姓名" + "\t" + "加班次数8:30后"+ "\t" + "餐补" + "\t" + "8:30后总时长" + "\t" +
                 "6:00-8:30间总时长" + "\t" + "总时长";
         System.out.println(v1);
         for (String keyName : mapMap.keySet()) {
             Map<String, Object> map = mapMap.get(keyName);
             int count = (Integer) map.get(OVERTIME_COUNT);
-            String value = keyName + "\t" + count + "\t" + map.get(OVERTIME_TIMES_8_30) + "\t" +
+            String value = keyName + "\t" + count+ "\t" + (count * 12) + "\t" + map.get(OVERTIME_TIMES_8_30) + "\t" +
                     map.get(OVERTIME_TIMES_6) + "\t" + map.get(OVERTIME_TOTAL_TIMES);
             System.out.println(value);
             list.add(value);
@@ -94,6 +94,9 @@ public class AttendanceMacDetail {
             Cell cell0 = sheet.getCell(3, i);//姓名
             Cell cell1 = sheet.getCell(10, i);//签退时间
             String name = cell0.getContents();
+            if(name.equals("徐俊永")){
+                System.out.println(123);
+            }
             Map<String, Object> map = mapMap.get(name);
             if (MapUtils.isEmpty(map)) {
                 map = new HashMap<String, Object>();
