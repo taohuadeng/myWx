@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0" metadata-complete="false">
-    
+
     <!-- 启动服务器读取的配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -42,6 +42,25 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+    <!-- UrlReWriterFilter -->
+    <filter>
+        <filter-name>UrlReWriterFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+        <!--<init-param>
+            <param-name>statusPath</param-name>
+            <param-value>/test</param-value>
+        </init-param>-->
+    </filter>
+    <filter-mapping>
+        <!-- 这里的名字要对应上UrlReWriterFilter -->
+        <filter-name>UrlReWriterFilter</filter-name>
+        <!-- 这里是选择过滤掉全部的Url -->
+        <url-pattern>/*</url-pattern>
+        <!-- 主要说明该拦截器拦截的请求包括客户端的请求和从服务器端forward的请求 -->
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
     <!-- 防乱码过滤器 -->
     <filter>
         <filter-name>encodingFilter</filter-name>
@@ -55,4 +74,6 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
 </web-app>

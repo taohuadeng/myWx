@@ -1,0 +1,12 @@
+<urlrewrite>
+    <rule>
+        <!-- 这里是想要修改成的链接 -->
+        <from>/(.*).html</from>
+        <!-- 这里是实际访问的地址 -->
+        <to type="forward">/$1.do</to>
+    </rule>
+    <outbound-rule>
+        <from>/*.html</from>
+        <to>/*.do</to>
+    </outbound-rule>
+</urlrewrite>

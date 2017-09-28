@@ -29,7 +29,7 @@ public class AttendanceMacDetail {
 
     private static void dealDate() throws IOException, BiffException {
         Workbook workbook = null;
-        InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201605.xls");
+        InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/2017年/青谷产品部.xls");
         //InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201606.xls");
         //InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/青谷考勤-201607.xls");
         //InputStream inputStream = new FileInputStream("/Users/taofadeng/Documents/日管会/考勤/含周末/青谷考勤-201605.xls");
